@@ -66,20 +66,17 @@ uv sync
 uv sync --all-extras
 ```
 
+After creating virtual environment activate it
+```bash
+source .venv/bin/activate
+```
+
 ### 2. Configure
 
 ```bash
 touch .env.default
 # Edit .env file: set BINANCE_API_KEY and BINANCE_API_SECRET
 # Get testnet keys at https://testnet.binance.vision/
-```
-
-### 3. Run the pipeline
-
-```bash
-# After install
-cryptex run --dry-run
-cryptex run --live
 ```
 
 ## Configuration
@@ -95,6 +92,16 @@ cryptex run --live
 | `MA_PERIOD` | `20` | Moving average period for signal |
 | `DATA_CACHE_TTL_SECONDS` | `30` | Cache validity in seconds |
 | `DRY_RUN` | `true` | If true, simulate orders only |
+
+
+### 3. Run the pipeline
+
+```bash
+# After install
+cryptex run --dry-run
+cryptex run --live
+```
+
 
 ## Limitations and Potential Improvements
 
@@ -132,8 +139,7 @@ CryptEx/
 │   │   └── simple_signal.py # Signal generation
 │   └── execution/
 │       └── order_manager.py # Order execution
-├── pyproject.toml          # Package config (setuptools)
-├── requirements.txt
+├── pyproject.toml           # Package config (setuptools)
 └── README.md
 ```
 
