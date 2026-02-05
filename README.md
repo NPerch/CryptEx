@@ -5,9 +5,9 @@ A minimal but functional crypto trading pipeline that connects to Binance, retri
 ## System Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    cryptex/cli.py (orchestrator)                │
-└─────────────────────────────────────────────────────────────────┘
+     ┌─────────────────────────────────────────────────────────────────┐
+     │                    cryptex/cli.py (orchestrator)                │
+     └─────────────────────────────────────────────────────────────────┘
                                     │
         ┌───────────────────────────┼───────────────────────────┐
         ▼                           ▼                           ▼
@@ -69,8 +69,8 @@ uv sync --all-extras
 ### 2. Configure
 
 ```bash
-cp .env.example .env
-# Edit .env: set BINANCE_API_KEY and BINANCE_API_SECRET
+touch .env.default
+# Edit .env file: set BINANCE_API_KEY and BINANCE_API_SECRET
 # Get testnet keys at https://testnet.binance.vision/
 ```
 
@@ -132,8 +132,6 @@ CryptEx/
 │   │   └── simple_signal.py # Signal generation
 │   └── execution/
 │       └── order_manager.py # Order execution
-├── .env.example            # Example configuration
-├── .env.default            # Default template
 ├── pyproject.toml          # Package config (setuptools)
 ├── requirements.txt
 └── README.md
