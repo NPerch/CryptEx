@@ -10,9 +10,8 @@ wheels/
 .venv
 
 # Environment and secrets
-.env
-.env.local
-.env.*.local
+.env.*
 
 # Local data storage
 .data/
+.vscode
